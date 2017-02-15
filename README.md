@@ -6,7 +6,7 @@ To install the plugin use WordPress installer or unzip the contents to a directo
 
 ###Show form
 Put the shortcode whereever You want in POST | PAGE<br>
-```write [OPTIVO]```<br><br>
+```[OPTIVO]```<br><br>
 If You want put this into PHP file, try put somethink like this:<br>
 ```echo do_shortcode('[OPTIVO]');```
 
