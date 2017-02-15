@@ -9,13 +9,14 @@
         },
         newsletterSupport: function () {
             $('#optivo_subs_form button').on('click', function(){
-                var email = $(this).parent().find('input[name=optivo_subs_email]').val();
-                var rules = $(this).parent().find('input[name=accept_rules]');
-                var weText = $(this).closest('form').data('wrong-email');
-                var cEmail = App.checkEmail(email);
+                var email = $(this).parent().find('input[name=optivo_subs_email]').val(),
+                    rules = $(this).parent().find('input[name=accept_rules]'),
+                    weText = $(this).closest('form').data('wrong-email'),
+                    rText = $(rules).data('rules-error'),
+                    cEmail = App.checkEmail(email);
 
                 if(rules && rules.prop('checked') == false){
-                    $('#optivo_message').text('cos tam cost tam');
+                    $('#optivo_message').text(rText);
                     return;
                 }
 

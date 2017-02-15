@@ -97,6 +97,13 @@
             'pluginPage',
             'op_pluginPage_section'
         );
+        add_settings_field(
+            'op_text_field_8',
+            __( 'Rules not accepted text', 'wordpress' ),
+            'op_text_field_8_render',
+            'pluginPage',
+            'op_pluginPage_section'
+        );
     }
 
     function op_text_field_0_render() {
@@ -134,6 +141,11 @@
         echo '<input type="text" name="op_settings[op_text_field_7]" value="'.$options['op_text_field_7'].'">';
     }
 
+    function op_text_field_8_render() {
+        $options = get_option( 'op_settings' );
+        echo '<input type="text" name="op_settings[op_text_field_8]" value="'.$options['op_text_field_8'].'">';
+    }
+
     function op_checkbox_field_1_render() {
         $options = get_option( 'op_settings' ); ?>
         <input type='checkbox' name='op_settings[op_checkbox_field_1]' <?php checked( $options['op_checkbox_field_1'], 1 ); ?> value='1'>
@@ -162,7 +174,7 @@
         echo '<input type="text" class="field" value="" name="optivo_subs_email" placeholder="e-mail">';
         echo '<button type="button" name="optivo_subscribe_button" class="form_subscribe_button button">'.$options['op_text_field_3'].'</button>';
         if($options['op_checkbox_field_1'] == 1){
-            echo '<br><label id="optivo_rules"><input id="accept_rules" type="checkbox" name="accept_rules">'.$options['op_textarea_field_2'].'</label>';
+            echo '<br><label id="optivo_rules"><input id="accept_rules" type="checkbox" name="accept_rules" data-rules-error="'.$options['op_text_field_8'].'">'.$options['op_textarea_field_2'].'</label>';
         }
         echo '</form>';
     }
