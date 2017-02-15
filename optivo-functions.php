@@ -20,7 +20,7 @@
     add_action('init', 'optivo_support');
     function optivo_support() {
         if (!is_admin()) {
-            wp_enqueue_script('optivo_support', plugins_url('/assets/js/optivo_support.js',__FILE__) );
+            wp_enqueue_script('optivo_support', plugins_url('/assets/js/optivo_support.min.js',__FILE__) );
         }
     }
 
